@@ -20,4 +20,5 @@ from website import views as website_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', website_views.home, name='website-home'),
+    path('search', website_views.MovieItemListView.as_view()),
 ]
