@@ -20,6 +20,10 @@ def home(request):
     return render(request, 'website/home.html', {'form': form, 'page': '1'})
 
 
+def about(request):
+    return render(request, 'website/about.html')
+
+
 class MovieDetailView(DetailView):
     model = MovieItem
 
