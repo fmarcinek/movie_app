@@ -1,14 +1,22 @@
 {% extends "website/base.html" %}
 {% block content %}
-<div class="content-section">
-    <form action="search" method="GET">
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Search for Movies</legend>
-            {{ form.as_p }}
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-online-info" type="submit">Search</button>
-        </div>
-    </form>
-</div>
+
+{% if user.is_authenticated %}
+    <h2 class="my-3">You can search for your favorite movies now!</h2>
+    <div class="content-section">
+        <form action="search" method="GET">
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Search for Movies</legend>
+                {{ form.as_p }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-online-info" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+{% else %}
+    <h3>You have to log in to browse the IMDB movie database.</h3>
+    <h3>If you haven't account yet, just join us!</h3>
+{% endif %}
+
 {% endblock content %}

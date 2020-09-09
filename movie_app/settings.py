@@ -31,13 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'website.apps.WebsiteConfig',
+    'users.apps.UsersConfig',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'website',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +128,8 @@ STATIC_URL = '/static/'
 
 OMDB_API_URL = 'http://www.omdbapi.com/'
 OMDB_API_KEY = '479a87e6'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = 'website-home'
+LOGIN_URL = 'login'
