@@ -1,0 +1,12 @@
+{% extends "website/home.html" %}
+{% block content %}
+    <div class="media content-section">
+        <img class="img" src="{{ object.movie.Poster }}">
+        <div class="media-body mr-4">
+            <h2>{{ object.movie.Title }}</h2>
+            <p class="text-muted">{{ object.movie.Type }}</p>
+            <p class="article-content">{{ object.movie.Year }}</p>
+        </div>
+    </div>
+{% endblock content %}
+

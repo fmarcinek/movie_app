@@ -3,7 +3,7 @@ from django import forms
 
 
 class MovieItem(models.Model):
-    imdb_id = models.CharField(max_length=10)
+    imdb_id = models.CharField(max_length=10, db_index=True)
     title = models.CharField(max_length=300)
     year = models.IntegerField(blank=True)
     poster = models.ImageField()

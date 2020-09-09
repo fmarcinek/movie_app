@@ -4,7 +4,7 @@
         <article class="media content-section">
             <img class="article-img" src="{{ movie.Poster }}">
             <div class="media-body">
-                <h2><a class="article-title" href="#">{{ movie.Title }}</a></h2>
+                <h2><a class="article-title" href="{% url 'website-movie' imdb_id=movie.imdbID %}">{{ movie.Title }}</a></h2>
                 <p class="text-muted">{{ movie.Type }}</p>
                 <p class="article-content">({{ movie.Year }})</p>
             </div>

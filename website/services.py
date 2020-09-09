@@ -13,3 +13,14 @@ def get_movie_items(request):
     resp = requests.get(OMDB_API_URL, params=params)
     movie_items = resp.json()
     return movie_items['Search']
+
+
+def get_certain_movie_info(imdb_id):
+    params = {
+        'apikey': OMDB_API_KEY,
+        'plot': 'full',
+        'i': imdb_id,
+    }
+    resp = requests.get(OMDB_API_URL, params=params)
+    print(resp.json())
+    return resp.json()
