@@ -22,5 +22,4 @@ def get_certain_movie_info(imdb_id):
         'i': imdb_id,
     }
     resp = requests.get(OMDB_API_URL, params=params)
-    print(resp.json())
     return resp.json()

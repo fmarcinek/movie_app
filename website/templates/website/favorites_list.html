@@ -1,0 +1,14 @@
+{% extends "website/home.html" %}
+{% block content %}
+    <h2>Your Favorites</h2>
+    {% for movie in favorites %}
+        <article class="media content-section">
+            <img class="img-rounded" style="width: 100px" src="{{ movie.poster }}">
+            <div class="media-body ml-4 my-auto">
+                <h2><a class="article-title" href="{% url 'website-movie' imdb_id=movie.imdb_id %}">{{ movie.title }}</a></h2>
+                <p class="text-muted">{{ movie.type }}</p>
+                <p class="article-content">({{ movie.year }})</p>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
